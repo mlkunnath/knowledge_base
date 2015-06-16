@@ -2,11 +2,31 @@
 <html>
 <head>
   <title>KnowledgeBase</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Editar Perfil', edit_user_registration_path%> |
+  <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
+<% else %>
+  <%= link_to "Registrarse", new_user_registration_path %> |
+  <%= link_to "Entrar", new_user_session_path %>
+<% end %>
+
+<!-- Notificaciones de device -->
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<!-- Fin notificaciones device -->
 
 <%= yield %>
 

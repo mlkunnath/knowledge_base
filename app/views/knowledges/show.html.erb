@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Show name:</strong>
+  <%= @knowledge.show_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @knowledge.description %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @knowledge.file %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @knowledge.tag %>
+</p>
+
+<%= link_to 'Edit', edit_knowledge_path(@knowledge) %> |
+<%= link_to 'Back', knowledges_path %>

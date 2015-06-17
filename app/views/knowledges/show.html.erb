@@ -12,12 +12,7 @@
 
 <p>
   <strong>File:</strong>
-  <%= @knowledge.file %>
-</p>
-
-<p>
-  <strong>Tag:</strong>
-  <%= @knowledge.tag %>
+  <%= link_to "Descargar", @knowledge.file.url, :target => "_blank" %>
 </p>
 
 <%= link_to 'Edit', edit_knowledge_path(@knowledge) %> |

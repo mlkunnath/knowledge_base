@@ -28,10 +28,10 @@ class KnowledgesController < ApplicationController
 
     respond_to do |format|
       if @knowledge.save
-        format.html { redirect_to @knowledge, notice: 'Knowledge was successfully created.' }
+        format.html { redirect_to @knowledge, notice: 'Gracias por compartir el conocimiento :)' }
         format.json { render :show, status: :created, location: @knowledge }
       else
-        format.html { render :new }
+        format.html { render :new, alert: 'No pudimos guardar tu archivos, intentalo nuevamente :(' }
         format.json { render json: @knowledge.errors, status: :unprocessable_entity }
       end
     end
@@ -42,10 +42,10 @@ class KnowledgesController < ApplicationController
   def update
     respond_to do |format|
       if @knowledge.update(knowledge_params)
-        format.html { redirect_to @knowledge, notice: 'Knowledge was successfully updated.' }
+        format.html { redirect_to @knowledge, notice: 'Los cambios se guardaron correctamente :)' }
         format.json { render :show, status: :ok, location: @knowledge }
       else
-        format.html { render :edit }
+        format.html { render :edit, alert: 'No pudimos guardar tus cambios, intentalo nuevamente :(' }
         format.json { render json: @knowledge.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class KnowledgesController < ApplicationController
   def destroy
     @knowledge.destroy
     respond_to do |format|
-      format.html { redirect_to knowledges_url, notice: 'Knowledge was successfully destroyed.' }
+      format.html { redirect_to knowledges_url, notice: 'Tu archivo ha sido borrado, recuerda que todo aporte es bueno :)' }
       format.json { head :no_content }
     end
   end

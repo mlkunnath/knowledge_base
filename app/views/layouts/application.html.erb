@@ -8,10 +8,9 @@
 </head>
 <body>
 
-
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
+  Has entradao como: <strong><%= "#{current_user.name} #{current_user.lastname}" %></strong>.
   <%= link_to 'Editar Perfil', edit_user_registration_path%> |
   <%= link_to "Salir", destroy_user_session_path, method: :delete %>
 <% else %>

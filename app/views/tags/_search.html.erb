@@ -1,0 +1,8 @@
+<div>
+    <p><strong>Buscadore por tags</strong></p>
+  <%= form_tag({controller: "tags", action: "search_by_name"}, method: "get") do %>
+    <%= label_tag :search, "Buscar por tag:" %>
+    <%= search_field(:tag, :name) %>
+    <%= submit_tag("buscar") %>
+  <% end %>
+</div>

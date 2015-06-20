@@ -1,5 +1,7 @@
-<h1>New knowledge</h1>
+<% i18n_scope = "conocimiento" %>
+
+<h1><%= t('titulo_agregando', scope: i18n_scope) %></h1>
 
 <%= render 'form_new' %>
 
-<%= link_to 'Back', knowledges_path %>
+<%= link_to t('boton_regresar', scope: i18n_scope), knowledges_path %>

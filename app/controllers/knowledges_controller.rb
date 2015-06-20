@@ -69,6 +69,6 @@ class KnowledgesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def knowledge_params
-      params.require(:knowledge).permit(:show_name, :description, :file, :tag_id)
+      params.require(:knowledge).permit(:show_name, :description, :file, :knowledge_type_id, :tag_list)
     end
 end

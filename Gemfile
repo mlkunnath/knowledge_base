@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 #gemas agregadas por giank
 gem 'paperclip', "~> 4.2"
 gem 'devise'
+gem 'acts-as-taggable-on', '~> 3.5'
 #fin gemas agregas por giank
 
 # Use jquery as the JavaScript library

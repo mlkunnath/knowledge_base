@@ -1,8 +1,9 @@
 class Knowledge < ActiveRecord::Base
-  belongs_to :tag
-
+	belongs_to :knowledge_type
+	
+	acts_as_taggable
+	
   has_attached_file :file
-
   do_not_validate_attachment_file_type :file
   validates :file, :attachment_presence => true
   validates_with AttachmentPresenceValidator, :attributes => :file

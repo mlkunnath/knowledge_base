@@ -1,19 +1,28 @@
-<p id="notice"><%= notice %></p>
-
+<% i18n_scope = "conocimiento" %>
 <p>
-  <strong>Show name:</strong>
+  <strong><%= t('nombre', scope: i18n_scope) %>:</strong>
   <%= @knowledge.show_name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t('descripcion', scope: i18n_scope) %>:</strong>
   <%= @knowledge.description %>
 </p>
 
 <p>
-  <strong>File:</strong>
-  <%= link_to "Descargar", @knowledge.file.url, :target => "_blank" %>
+  <strong><%= t('tipo_conocimiento', scope: i18n_scope) %>:</strong>
+  <%= @knowledge.knowledge_type.name %>
 </p>
 
-<%= link_to 'Edit', edit_knowledge_path(@knowledge) %> |
-<%= link_to 'Back', knowledges_path %>
+<p>
+  <strong><%= t('archivo', scope: i18n_scope) %>:</strong>
+  <%= link_to t('descargar', scope: i18n_scope), @knowledge.file.url, :target => "_blank" %>
+</p>
+
+<p>
+  <strong><%= t('tags', scope: i18n_scope) %>:</strong>
+  <%= raw @knowledge.tag_list.map { |t| t }.join(', ') %>
+</p>
+
+<%= link_to t('editar', scope: i18n_scope), edit_knowledge_path(@knowledge) %> |
+<%= link_to t('boton_regresar', scope: i18n_scope), knowledges_path %>

@@ -1,9 +1,14 @@
-<h1>Listing knowledges</h1>
+<% i18n_scope = "conocimiento" %>
+
+<h1><%= t('titulo_lista_conocimientos', scope: i18n_scope) %></h1>
+
+<%= render 'tags/search' %>
 
 <table>
   <thead>
     <tr>
-      <th>Nombre Corto</th>
+      <th><%= t('nombre_corto', scope: i18n_scope) %></th>
+      <th><%= t('tipo_conocimiento', scope: i18n_scope) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +17,10 @@
     <% @knowledges.each do |knowledge| %>
       <tr>
         <td><%= knowledge.show_name %></td>
-        <td><%= link_to 'Show', knowledge %></td>
-        <td><%= link_to 'Edit', edit_knowledge_path(knowledge) %></td>
-        <td><%= link_to 'Destroy', knowledge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= knowledge.knowledge_type.name %></td>
+        <td><%= link_to t('ver', scope: i18n_scope), knowledge %></td>
+        <td><%= link_to t('editar', scope: i18n_scope), edit_knowledge_path(knowledge) %></td>
+        <td><%= link_to t('eliminar', scope: i18n_scope), knowledge, method: :delete, data: { confirm: t('confirmar_eliminar', scope: i18n_scope) } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Knowledge', new_knowledge_path %>
+<%= link_to t('boton_nuevo_conocimiento', scope: i18n_scope), new_knowledge_path %>

@@ -1,6 +1,8 @@
-<h1>Editing knowledge</h1>
+<% i18n_scope = "conocimiento" %>
+
+<h1><%= t('editando', scope: i18n_scope) %></h1>
 
 <%= render 'form_edit' %>
 
-<%= link_to 'Show', @knowledge %> |
-<%= link_to 'Back', knowledges_path %>
+<%= link_to t('ver', scope: i18n_scope), @knowledge %> |
+<%= link_to t('boton_regresar', scope: i18n_scope), knowledges_path %>

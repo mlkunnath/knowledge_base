@@ -1,3 +1,5 @@
+<% i18n_scope = "conocimiento" %>
+
 <%= form_for @knowledge, :html => { :multipart => true } do |f| %>
   <% if @knowledge.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +14,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :show_name %><br>
+    <%= f.label :show_name, t('nombre_corto', scope: i18n_scope) %><br>
     <%= f.text_field :show_name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description, t('descripcion', scope: i18n_scope) %><br>
     <%= f.text_area :description %>
   </div>
+  
   <div class="field">
-    <%= f.label :file %><br>
+    <%= f.label t('tipo_conocimiento', scope: i18n_scope) %><br>
+    <%= f.collection_select :knowledge_type_id, KnowledgeType.all, :id, :name, include_blank: t('seleccione_tipo_conocimiento', scope: i18n_scope) %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :file, t('archivo', scope: i18n_scope) %><br>
     <%= f.file_field :file %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_list, t('lista_tags', scope: i18n_scope) %>
+    <%= f.text_field :tag_list %>
   </div>
   <div class="actions">
     <%= f.submit %>

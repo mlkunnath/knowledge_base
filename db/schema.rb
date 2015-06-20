@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618193413) do
+ActiveRecord::Schema.define(version: 20150620162111) do
 
   create_table "career_by_universities", force: true do |t|
     t.integer  "career_id"
@@ -58,18 +58,33 @@ ActiveRecord::Schema.define(version: 20150618193413) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
-    t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "knowledge_type_id"
+    t.string   "tags"
   end
 
-  add_index "knowledges", ["tag_id"], name: "index_knowledges_on_tag_id"
+  add_index "knowledges", ["knowledge_type_id"], name: "index_knowledges_on_knowledge_type_id"
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", force: true do |t|
-    t.string   "name",       limit: 150
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "universities", force: true do |t|
     t.string   "full_name",         limit: 250

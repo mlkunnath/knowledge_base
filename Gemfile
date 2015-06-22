@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'paperclip', "~> 4.2"
 gem 'devise'
 gem 'acts-as-taggable-on', '~> 3.5'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'autoprefixer-rails'
+
 #fin gemas agregas por giank
 
 # Use jquery as the JavaScript library

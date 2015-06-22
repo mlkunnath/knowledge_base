@@ -4,28 +4,28 @@
 
 <%= render 'tags/search' %>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t('nombre_corto', scope: i18n_scope) %></th>
-      <th><%= t('tipo_conocimiento', scope: i18n_scope) %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @knowledges.each do |knowledge| %>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
       <tr>
-        <td><%= knowledge.show_name %></td>
-        <td><%= knowledge.knowledge_type.name %></td>
-        <td><%= link_to t('ver', scope: i18n_scope), knowledge %></td>
-        <td><%= link_to t('editar', scope: i18n_scope), edit_knowledge_path(knowledge) %></td>
-        <td><%= link_to t('eliminar', scope: i18n_scope), knowledge, method: :delete, data: { confirm: t('confirmar_eliminar', scope: i18n_scope) } %></td>
+        <th><%= t('nombre_corto', scope: i18n_scope) %></th>
+        <th><%= t('tipo_conocimiento', scope: i18n_scope) %></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <% @knowledges.each do |knowledge| %>
+        <tr>
+          <td><%= knowledge.show_name %></td>
+          <td><%= knowledge.knowledge_type.name %></td>
+          <td><%= link_to t('ver', scope: i18n_scope), knowledge, class: 'btn btn-primary btn-xs' %></td>
+          <td><%= link_to t('editar', scope: i18n_scope), edit_knowledge_path(knowledge), class: 'btn btn-info btn-xs' %></td>
+          <td><%= link_to t('eliminar', scope: i18n_scope), knowledge, method: :delete, data: { confirm: t('confirmar_eliminar', scope: i18n_scope) }, class: 'btn btn-danger btn-xs' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to t('boton_nuevo_conocimiento', scope: i18n_scope), new_knowledge_path %>
+<%= link_to t('boton_nuevo_conocimiento', scope: i18n_scope), :back, class: 'btn btn-primary' %>

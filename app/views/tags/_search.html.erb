@@ -1,8 +1,12 @@
+<% i18n_scope = "tag" %>
 <div>
-    <p><strong>Buscadore por tags</strong></p>
-  <%= form_tag({controller: "tags", action: "search_by_name"}, method: "get") do %>
-    <%= label_tag :search, "Buscar por tag:" %>
-    <%= search_field(:tag, :name) %>
-    <%= submit_tag("buscar") %>
+    <p><strong><%= t('titulo_buscador_tags', scope: i18n_scope) %></strong></p>
+  <%= form_tag({controller: "tags", action: "search_by_name"}, method: "get", class: "form-inline") do %>
+    <div class="field form-group">
+      <%= text_field :tag, :name, placeholder: t('buscar_por_tag', scope: i18n_scope), class: 'form-control' %>
+    </div>
+    <div class="actions form-group">
+      <%= submit_tag t('buscar', scope: i18n_scope), class: 'btn btn-primary' %>
+    </div>
   <% end %>
 </div>

@@ -1,6 +1,6 @@
 <% i18n_scope = "conocimiento" %>
 
-<%= form_for @knowledge, :html => { :multipart => true } do |f| %>
+<%= form_for @knowledge, :html => { :multipart => true, class: "form-horizontal" } do |f| %>
   <% if @knowledge.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@knowledge.errors.count, "error") %> prohibited this knowledge from being saved:</h2>
@@ -13,29 +13,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :show_name, t('nombre_corto', scope: i18n_scope) %><br>
-    <%= f.text_field :show_name %>
+    <%= f.text_field :show_name, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :description, t('descripcion', scope: i18n_scope) %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
   
-  <div class="field">
+  <div class="field form-group">
     <%= f.label t('tipo_conocimiento', scope: i18n_scope) %><br>
-    <%= f.collection_select :knowledge_type_id, KnowledgeType.all, :id, :name, include_blank: t('seleccione_tipo_conocimiento', scope: i18n_scope) %>
+    <%= f.collection_select :knowledge_type_id, KnowledgeType.all, :id, :name, {include_blank: t('seleccione_tipo_conocimiento', scope: i18n_scope)}, {class: 'form-control'} %>
   </div>
   
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :file, t('archivo', scope: i18n_scope) %><br>
-    <%= f.file_field :file %>
+    <%= f.file_field :file, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :tag_list, t('lista_tags', scope: i18n_scope) %>
-    <%= f.text_field :tag_list %>
+    <%= f.text_field :tag_list, class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-group">
+    <%= f.submit t('aceptar', scope: i18n_scope), class: 'btn btn-primary' %>
   </div>
 <% end %>

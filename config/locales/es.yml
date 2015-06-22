@@ -19,3 +19,9 @@ es:
     tags: "Tags"
     titulo_resultado_buscar_tag: "Conocimientos Taggeados como"
     busqueda_tags_sin_resultado: "Este tag no tiene conocimientos asociados :("
+    guardar: "Guardar"
+    aceptar: "Aceptar"
+  tag:
+    buscar_por_tag: "Buscar por tag"
+    titulo_buscador_tags: "Buscador por Tags"
+    buscar: "Buscar"

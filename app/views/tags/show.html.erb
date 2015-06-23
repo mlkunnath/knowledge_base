@@ -1,14 +1,10 @@
 <% i18n_scope = "conocimiento" %>
 <h1><%= t('titulo_resultado_buscar_tag', scope: i18n_scope) %>: "<%= @tag.name %>"</h1>
 
-<% if @knowledges.count > 0 %>
-  <ul>
-    <% @knowledges.each do |knowledge| %>
-      <li><%= link_to knowledge.show_name, knowledge_path(knowledge) %> </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p><%= t('busqueda_tags_sin_resultado', scope: i18n_scope) %></p>
-<% end %>
+<%= render 'tags/search' %>
 
-<%= link_to t('boton_regresar', scope: i18n_scope), knowledges_path %>
+<div class="container-fluid">
+  <%= render 'shared/knowledge_grid' %>
+</div>
+
+<%= link_to t('boton_regresar', scope: i18n_scope), knowledges_path, class: 'btn btn-warning' %>

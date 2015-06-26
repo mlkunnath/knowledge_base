@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620162111) do
+ActiveRecord::Schema.define(version: 20150623201517) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "career_by_universities", force: true do |t|
     t.integer  "career_id"
@@ -20,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150620162111) do
     t.datetime "updated_at"
   end
 
-  add_index "career_by_universities", ["career_id"], name: "index_career_by_universities_on_career_id"
-  add_index "career_by_universities", ["university_id"], name: "index_career_by_universities_on_university_id"
+  add_index "career_by_universities", ["career_id"], name: "index_career_by_universities_on_career_id", using: :btree
+  add_index "career_by_universities", ["university_id"], name: "index_career_by_universities_on_university_id", using: :btree
 
   create_table "careers", force: true do |t|
     t.string   "name",       limit: 200
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 20150620162111) do
     t.datetime "updated_at"
   end
 
-  add_index "course_by_careers", ["career_id"], name: "index_course_by_careers_on_career_id"
-  add_index "course_by_careers", ["course_id"], name: "index_course_by_careers_on_course_id"
+  add_index "course_by_careers", ["career_id"], name: "index_course_by_careers_on_career_id", using: :btree
+  add_index "course_by_careers", ["course_id"], name: "index_course_by_careers_on_course_id", using: :btree
 
   create_table "courses", force: true do |t|
     t.string   "name",       limit: 150
@@ -62,9 +65,11 @@ ActiveRecord::Schema.define(version: 20150620162111) do
     t.datetime "updated_at"
     t.integer  "knowledge_type_id"
     t.string   "tags"
+    t.integer  "user_id"
   end
 
-  add_index "knowledges", ["knowledge_type_id"], name: "index_knowledges_on_knowledge_type_id"
+  add_index "knowledges", ["knowledge_type_id"], name: "index_knowledges_on_knowledge_type_id", using: :btree
+  add_index "knowledges", ["user_id"], name: "index_knowledges_on_user_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
@@ -76,15 +81,15 @@ ActiveRecord::Schema.define(version: 20150620162111) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: true do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "universities", force: true do |t|
     t.string   "full_name",         limit: 250
@@ -114,7 +119,7 @@ ActiveRecord::Schema.define(version: 20150620162111) do
     t.string   "lastname",               limit: 200
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

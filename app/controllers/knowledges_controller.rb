@@ -4,7 +4,7 @@ class KnowledgesController < ApplicationController
   # GET /knowledges
   # GET /knowledges.json
   def index
-    @knowledges = Knowledge.all
+    @knowledges = Knowledge.where(user_id: current_user.id)
   end
 
   # GET /knowledges/1
@@ -25,6 +25,7 @@ class KnowledgesController < ApplicationController
   # POST /knowledges.json
   def create
     @knowledge = Knowledge.new(knowledge_params)
+    @knowledge.user_id = current_user.id
 
     respond_to do |format|
       if @knowledge.save
@@ -71,4 +72,5 @@ class KnowledgesController < ApplicationController
     def knowledge_params
       params.require(:knowledge).permit(:show_name, :description, :file, :knowledge_type_id, :tag_list)
     end
+    
 end

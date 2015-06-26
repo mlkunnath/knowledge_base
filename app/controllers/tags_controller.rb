@@ -1,10 +1,17 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:show]
   
-  def search_by_name
+  def search
     tag_name = search_params[:name]
-    @knowledges = Knowledge.tagged_with(tag_name)
-    @tag = Tag.new name: tag_name
+    tag_id = search_params[:id]
+    if tag_name
+      @knowledges = Knowledge.tagged_with(tag_name)
+      @tag = Tag.new name: tag_name
+    else 
+      @tag = Tag.find(tag_id)
+      @knowledges = Knowledge.tagged_with(@tag.name)
+    end
+    
     render :show
   end
   
@@ -18,6 +25,6 @@ class TagsController < ApplicationController
     end
     
     def search_params
-      params.require(:tag).permit(:name)
+      params.require(:tag).permit(:name, :id)
     end
 end

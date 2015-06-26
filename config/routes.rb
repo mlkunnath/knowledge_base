@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'tags/search', to: 'tags#search_by_name'
+  get 'tags/search', to: 'tags#search'
   get 'tags/:id', to: 'tags#show'
   
   devise_for :users, :controllers => { registrations: 'registrations' }
+  
   resources :knowledges
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -23,6 +23,8 @@ gem 'autoprefixer-rails'
 gem 'pg'
 #GEMA PUMA WEB SERVER PARA EROKU
 gem 'puma'
+#GEMA PAra ver los assets en produccion, para HEROKU
+gem 'rails_12factor', group: :production
 #fin gemas agregas por giank
 
 # Use jquery as the JavaScript library

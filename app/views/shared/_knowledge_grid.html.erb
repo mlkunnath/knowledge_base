@@ -10,7 +10,7 @@
   		  <div class="caption">
   			  <h4><%= link_to knowledge.show_name, knowledge_path(knowledge), class: 'word-wrap' %></h4>
   			  <p><%= number_to_human_size knowledge.file.size %></p>
-  			  <p><%= raw knowledge.tag_list.map { |t| link_to t, controller: "tags", action: "search", "tag[name]": t }.join ', ' %></p>
+  			  <p><%= raw knowledge.tag_list.map { |t| link_to t, controller: "tags", action: "search", "tag[name]"=> t }.join ', ' %></p>
   		  </div>
   	  </div>
     </div>

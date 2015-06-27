@@ -21,7 +21,7 @@
   
   <p>
     <strong><%= t('tags', scope: i18n_scope) %>:</strong>
-    <%= raw @knowledge.tag_list.map { |t| link_to t, controller: "tags", action: "search", "tag[name]": t }.join ', ' %>
+    <%= raw @knowledge.tag_list.map { |t| link_to t, controller: "tags", action: "search", "tag[name]" => t }.join ', ' %>
   </p>
 </div>
 

@@ -21,6 +21,8 @@ gem 'acts-as-taggable-on', '~> 3.5'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
 gem 'pg'
+#GEMA PUMA WEB SERVER PARA EROKU
+gem 'puma'
 #fin gemas agregas por giank
 
 # Use jquery as the JavaScript library

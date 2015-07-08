@@ -1,22 +1,22 @@
 <% column_count = 1 %>
 <% if @knowledges.count > 0 %>
-  <% if column_count == 1 %>
-    <div class="row">
-  <% end %>
+  
   <% @knowledges.each do |knowledge| %>
+    <% if column_count == 1 %>
+      <div class="row">
+    <% end %>
     <div class="col-xs-4 col-md-3">
-      <div class="thumbnail">
-  		  <%= link_to content_tag(:div, nil, {class: ["file-icon", "file-icon-xl"], data: {type: get_file_extention(knowledge.file.url)}}), knowledge.file.url, {:target => "_blank"} %>
+      <div class="thumbnail thumbnail-fixed">
+  		  <%= link_to content_tag(:div, nil, {class: ["file-icon", "file-icon-ml", "center-fixed-content"], data: {type: get_file_extention(knowledge.file.url)}}), knowledge.file.url, {:target => "_blank"} %>
   		  <div class="caption">
-  			  <h4><%= link_to knowledge.show_name, knowledge_path(knowledge), class: 'word-wrap' %></h4>
-  			  <p><%= number_to_human_size knowledge.file.size %></p>
+  			  <h4><%= link_to get_file_name_without_extention(knowledge.file.url), knowledge_path(knowledge), class: 'ellipsis' %></h4>
   			  <p><%= raw knowledge.tag_list.map { |t| link_to t, controller: "tags", action: "search", "tag[name]"=> t }.join ', ' %></p>
   		  </div>
   	  </div>
     </div>
     <% if column_count == 4 || column_count == @knowledges.count %>
       </div>
-  	  <% column_count = 1%>
+  	  <% column_count = 0%>
     <% end %>
     <% column_count += 1%>
   <% end %>

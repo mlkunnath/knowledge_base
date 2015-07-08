@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+University.create full_name: "Universidad Peruana de Ciencias Aplicadas", short_name: "UPC"
+
+KnowledgeType.create [
+  {name: "Tarea"}, 
+  {name: "Tarea de Investigación"}, 
+  {name: "Examen"}, 
+  {name: "Examen Parcial"},
+  {name: "Examen Final"}, 
+  {name: "Trabajo de Curso"}, 
+  {name: "Proyecto de Cursos"}, 
+  {name: "Video de Clase"}, 
+  {name: "Audio de clase"}
+]
+
+

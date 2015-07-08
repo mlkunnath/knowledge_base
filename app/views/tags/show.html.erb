@@ -1,14 +1,17 @@
 <% i18n_scope = "conocimiento" %>
 <h1><%= t('titulo_resultado_buscar_tag', scope: i18n_scope) %>: "<%= @tag.name %>"</h1>
-
-<%= render 'searcher' %>
-
-<div class="container-fluid">
-  <% if @knowledges.count > 0 %>
-    <%= render 'shared/knowledge_grid' %>
-  <% else %>
-    <p><%= t('busqueda_tags_sin_resultado', scope: i18n_scope) %></p>
-  <% end %>
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'searcher' %>
+  </div>
 </div>
-
+<div class="row">
+  <div class="col-md-12">
+    <% if @knowledges.count > 0 %>
+      <%= render 'shared/knowledge_grid' %>
+    <% else %>
+      <p><%= t('busqueda_tags_sin_resultado', scope: i18n_scope) %></p>
+    <% end %>
+  </div>
+</div>
 <%= link_to t('boton_regresar', scope: i18n_scope), knowledges_path, class: 'btn btn-warning' %>

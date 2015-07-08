@@ -21,9 +21,11 @@ gem 'acts-as-taggable-on', '~> 3.5'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
 gem 'pg'
+gem 'pg_search'
+gem 'aws-sdk', '< 2.0'
 #GEMA PUMA WEB SERVER PARA EROKU
-gem 'puma'
-#GEMA PAra ver los assets en produccion, para HEROKU
+#gem 'puma'
+#GEMA Para ver los assets en produccion, para HEROKU
 gem 'rails_12factor', group: :production
 #fin gemas agregas por giank
 
@@ -39,8 +41,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

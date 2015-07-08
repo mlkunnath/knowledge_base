@@ -1,7 +1,7 @@
 <% i18n_scope = "conocimiento" %>
 <div class="jumbotron">
   <p>
-    <h2><%= @knowledge.show_name %></h2>
+    <h2><%= get_file_name(@knowledge.file.url) %></h2>
   </p>
   
   <p>
@@ -25,5 +25,7 @@
   </p>
 </div>
 
-<%= link_to t('editar', scope: i18n_scope), edit_knowledge_path(@knowledge), class: 'btn btn-primary' %> |
+<% if current_user.id == @knowledge.user_id %>
+  <%= link_to t('editar', scope: i18n_scope), edit_knowledge_path(@knowledge), class: 'btn btn-primary' %> |
+<% end %>
 <%= link_to t('boton_regresar', scope: i18n_scope), :back, class: 'btn btn-warning' %>

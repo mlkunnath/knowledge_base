@@ -1,0 +1,9 @@
+development:
+  access_key_id: AKIAJR6CNV5W2PSK5XVA
+  secret_access_key: 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
+test:
+  access_key_id: AKIAJR6CNV5W2PSK5XVA
+  secret_access_key: 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
+production:
+  access_key_id: AKIAJR6CNV5W2PSK5XVA
+  secret_access_key: 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

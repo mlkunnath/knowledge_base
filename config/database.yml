@@ -5,7 +5,8 @@ development:
   pool: 5
   username: knowledge
   password: knowledge
-
+  host:     <%= ENV['IP'] %>
+  
 test: &TEST
   adapter: postgresql
   encoding: utf8
@@ -13,7 +14,8 @@ test: &TEST
   pool: 5
   username: knowledge
   password: knowledge
-
+  host:     <%= ENV['IP'] %>
+  
 production:
   adapter: postgresql
   encoding: utf8
@@ -21,3 +23,4 @@ production:
   pool: 5
   username: knowledge
   password: knowledge
+  host:     <%= ENV['IP'] %>

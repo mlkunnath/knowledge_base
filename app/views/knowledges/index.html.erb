@@ -17,7 +17,7 @@
     <tbody>
       <% @knowledges.each do |knowledge| %>
         <tr>
-          <td><%= knowledge.show_name %></td>
+          <td><%= get_file_name(knowledge.file.url) %></td>
           <td><%= knowledge.knowledge_type.name %></td>
           <td><%= link_to t('ver', scope: i18n_scope), knowledge, class: 'btn btn-primary btn-xs' %></td>
           <td><%= link_to t('editar', scope: i18n_scope), edit_knowledge_path(knowledge), class: 'btn btn-info btn-xs' %></td>

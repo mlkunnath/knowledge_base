@@ -1,11 +1,11 @@
 es:
   conocimiento:
-    nombre_corto: "Nombre Corto"
+    nombre_corto: "Nombre"
     descripcion: "Descripción"
     tipo_conocimiento: "Tipo de Conocimiento"
     seleccione_tipo_conocimiento: "Que cosa es?"
     archivo: "Archivo"
-    titulo_lista_conocimientos: "Últimos Conocimientos compartidos"
+    titulo_lista_conocimientos: "Tus Conocimientos compartidos"
     ver: "Ver"
     editar: "Editar"
     eliminar: "Eliminar"

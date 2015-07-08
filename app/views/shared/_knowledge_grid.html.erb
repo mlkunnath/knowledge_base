@@ -6,7 +6,7 @@
       <div class="row">
     <% end %>
     <div class="col-xs-4 col-md-3">
-      <div class="thumbnail thumbnail-fixed">
+      <div class="thumbnail thumbnail-fixed transition-add">
   		  <%= link_to content_tag(:div, nil, {class: ["file-icon", "file-icon-ml", "center-fixed-content"], data: {type: get_file_extention(knowledge.file.url)}}), knowledge.file.url, {:target => "_blank"} %>
   		  <div class="caption">
   			  <h4><%= link_to get_file_name_without_extention(knowledge.file.url), knowledge_path(knowledge), class: 'ellipsis' %></h4>

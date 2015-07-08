@@ -39,9 +39,14 @@
   margin: 0 auto
   
 .thumbnail-fixed
-  height: 250px
-  min-height: 250px
+  height: 200px
+  min-height: 200px
   overflow: hidden
+  -webkit-transition: height 400ms ease
+  -moz-transition: height 400ms ease
+  -ms-transition: height 400ms ease
+  -o-transition: height 400ms ease
+  transition: height 400ms ease
   
 .search_form_padding
   padding-top: 15px 
@@ -50,6 +55,15 @@
 .footer-bottom
   bottom: 0px
   position: absolute
+  
+.transition-add:hover
+  height: 250px
+  -webkit-transition: height 400ms ease
+  -moz-transition: height 400ms ease
+  -ms-transition: height 400ms ease
+  -o-transition: height 400ms ease
+  transition: height 400ms ease
+
   
 body  
   padding-bottom: 70px

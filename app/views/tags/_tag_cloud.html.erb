@@ -1,0 +1,7 @@
+<% if @tags_cloud%>
+  <div class="list-group">
+    <% @tags_cloud.each do |tag| %>
+        <%= link_to tag.name, {controller: "tags", action: "search", "tag[name]"=> tag.name}, {class: 'list-group-item'} %>
+    <% end %>
+  </div>
+<% end %>

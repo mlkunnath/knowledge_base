@@ -1,5 +1,8 @@
 <% i18n_scope = "conocimiento" %>
-<h1><%= t('titulo_resultado_buscar_tag', scope: i18n_scope) %>: "<%= @tag.name %>"</h1>
+
+<div class="page-header">
+  <h1><%= t('titulo_resultado_buscar_tag', scope: i18n_scope) %>: "<%= @tag.name %>"</h1>
+</div>
 <div class="row">
   <div class="col-md-12">
     <%= render 'searcher' %>

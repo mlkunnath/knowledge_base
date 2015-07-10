@@ -9,7 +9,8 @@
       <div class="thumbnail thumbnail-fixed transition-add">
   		  <%= link_to content_tag(:div, nil, {class: ["file-icon", "file-icon-ml", "center-fixed-content"], data: {type: get_file_extention(knowledge.file.url)}}), knowledge.file.url, {:target => "_blank"} %>
   		  <div class="caption">
-  			  <h4><%= link_to get_file_name_without_extention(knowledge.file.url), knowledge_path(knowledge), class: 'ellipsis' %></h4>
+  		    <% file_name_without_extention = get_file_name_without_extention(knowledge.file.url) %>
+  			  <h4><%= link_to file_name_without_extention, knowledge_path(knowledge), {class: 'ellipsis', title: file_name_without_extention, data: {toggle: 'tooltip'}} %></h4>
   			  <p><%= raw knowledge.tag_list.map { |t| link_to t, controller: "tags", action: "search", "tag[name]"=> t }.join ', ' %></p>
   		  </div>
   	  </div>

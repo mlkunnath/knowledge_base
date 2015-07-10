@@ -15,7 +15,15 @@
 
   <div class="field form-group">
     <%= f.label :file, t('archivo', scope: i18n_scope) %><br>
-    <%= f.file_field :file, class: 'form-control' %>
+
+    <div class="input-group">
+      <span class="input-group-btn">
+        <span class="btn btn-primary btn-file">
+            Selecionar… <%= f.file_field :file %>
+        </span>
+      </span>
+      <input type="text" class="form-control" readonly="">
+    </div>
   </div>
   
   <div class="field form-group">

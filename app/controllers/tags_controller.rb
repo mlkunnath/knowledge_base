@@ -5,7 +5,7 @@ class TagsController < ApplicationController
     tag_name = search_params[:name]
     tag_id = search_params[:id]
     if tag_name
-      @knowledges = Knowledge.tagged_with(tag_name).order(created_at: :desc)
+      @knowledges = Knowledge.tagged_with(tag_name, :any => true).order(created_at: :desc)
       @tag = Tag.new name: tag_name
 =begin
       @search_result = PgSearch.multisearch(tag_name)
@@ -34,8 +34,8 @@ class TagsController < ApplicationController
   def show
     @knowledges = Knowledge.tagged_with(@tag.name)
   end
-  
-   private
+
+  private
     def set_tag
       @tag = Tag.find(params[:id])
     end

@@ -16,6 +16,9 @@
 @import "bootstrap"
 @import "fileicon"
 
+body  
+  padding-bottom: 70px
+
 .word-wrap 
   word-break: break-word
   word-wrap: break-word
@@ -39,16 +42,24 @@
   margin: 0 auto
   
 .thumbnail-fixed
-  height: 200px
   min-height: 200px
   overflow: hidden
-  -webkit-transition: height 400ms ease
-  -moz-transition: height 400ms ease
-  -ms-transition: height 400ms ease
-  -o-transition: height 400ms ease
-  transition: height 400ms ease
   
-.search_form_padding
+.thumbnail-fixed:after 
+  content: ""
+  display: block
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 18%
+  background-size: 100%
+  background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,rgba(255,255,255,0)),color-stop(100%,#FFFFFF))
+  background: -webkit-linear-gradient(top,rgba(255,255,255,0) 0,#FFFFFF 100%)
+  background: -moz-linear-gradient(top,rgba(231,231,226,0) 0,#FFFFFF 100%)
+  background: -o-linear-gradient(top,rgba(255,255,255,0) 0,#FFFFFF 100%)
+  
+.search-form-padding
   padding-top: 15px 
   padding-bottom: 15px
   
@@ -56,14 +67,38 @@
   bottom: 0px
   position: absolute
   
-.transition-add:hover
-  height: 250px
-  -webkit-transition: height 400ms ease
-  -moz-transition: height 400ms ease
-  -ms-transition: height 400ms ease
-  -o-transition: height 400ms ease
-  transition: height 400ms ease
+.transition-add
+  max-height: 200px
+  max-width: 200px
+  -webkit-transition: max-height 400ms
+  -moz-transition: max-height 400ms
+  -ms-transition: max-height 400ms
+  -o-transition: max-height 400ms
+  transition: max-height 400ms
 
+.transition-add:hover
+  max-height: 300px
+  -webkit-transition: max-height 400ms
+  -moz-transition: max-height 400ms
+  -ms-transition: max-height 400ms
+  -o-transition: max-height 400ms
+  transition: max-height 400ms
   
-body  
-  padding-bottom: 70px
+.btn-file
+  position: relative
+  overflow: hidden
+
+.btn-file input[type=file]
+  position: absolute
+  top: 0
+  right: 0
+  min-width: 100%
+  min-height: 100%
+  font-size: 100px
+  text-align: right
+  filter: alpha(opacity=0)
+  opacity: 0
+  outline: none
+  background: white
+  cursor: inherit
+  display: block

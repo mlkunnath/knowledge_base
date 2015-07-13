@@ -41,6 +41,6 @@
     <%= f.text_field :tag_list, class: 'form-control' %>
   </div>
   <div class="actions form-group">
-    <%= f.submit t('aceptar', scope: i18n_scope), class: 'btn btn-primary' %>
+    <%= f.button t('aceptar', scope: i18n_scope), {class: 'btn btn-primary', id: 'accept_new_knowledge'} %>
   </div>
 <% end %>

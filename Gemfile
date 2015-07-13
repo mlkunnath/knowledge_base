@@ -23,6 +23,7 @@ gem 'autoprefixer-rails'
 gem 'pg'
 gem 'pg_search'
 gem 'aws-sdk', '< 2.0'
+gem 'jquery-turbolinks'
 #GEMA PUMA WEB SERVER PARA EROKU
 #gem 'puma'
 #GEMA Para ver los assets en produccion, para HEROKU

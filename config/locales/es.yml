@@ -25,3 +25,45 @@ es:
     buscar_por_tag: "Buscar por tag"
     titulo_buscador_tags: "Buscador por Tags"
     buscar: "Buscar"
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Siguiente &#8594;"
+    page_gap: "&hellip;"
+    
+  users:
+    sessions:
+      new:
+        titulo_login: "Log in"
+        usuario: "Email"
+        password: "Password"
+        recordarme: "Recordarme"
+        boton_login: "Entrar"
+        registrarse: "Regístrarme"
+        olvide_contrasena: "Olvidé mi password"
+        
+  registrations:
+    new:
+      titulo_registro: "Regístrate"
+      nombres: "Nombres"
+      apellidos: "Apellidos"
+      email: "Email"
+      password: "Password"
+      caracteres_minimos: "caracteres como mínimo"
+      confirmar_password: "Repite tu password"
+      boton_crear_cuenta: "Listo!"
+    edit:
+      titulo_editar_usuario: "Mis Datos"
+      nombres: "Nombres"
+      apellidos: "Apellidos"
+      esperando_confirmacion_de: "Esperando confirmación de:"
+      password: "Password"
+      dejalo_en_blanco_si_no_lo_quieres_cambiar: "déjalo en blanco si no quieres cambiarlo"
+      confirmar_password: "Repite tu password"
+      ingresa_tu_password_para_confirmar_cambios: "ingresa tu password para confirmar los cambios"
+      password_actual: "Password actual"
+      boton_actualizar: "Actualizar"
+      subtitulo_cancelar_cuenta: "Cancelar mi cuenta"
+      te_vas: "¿Te vas?"
+      boton_cancelar_cuenta:  "Cancela mi cuenta"
+      confirmar_cancelacion: "¿Estás seguro?"
+      boton_atras: "Atras"

@@ -1,24 +1,38 @@
 <% column_count = 1 %>
 <% if @knowledges.count > 0 %>
-  
-  <% @knowledges.each do |knowledge| %>
-    <% if column_count == 1 %>
-      <div class="row">
-    <% end %>
-    <div class="col-xs-4 col-md-3">
-      <div class="thumbnail thumbnail-fixed transition-add">
-  		  <%= link_to content_tag(:div, nil, {class: ["file-icon", "file-icon-ml", "center-fixed-content"], data: {type: get_file_extention(knowledge.file.url)}}), knowledge.file.url, {:target => "_blank"} %>
-  		  <div class="caption">
-  		    <% file_name_without_extention = get_file_name_without_extention(knowledge.file.url) %>
-  			  <h4><%= link_to file_name_without_extention, knowledge_path(knowledge), {class: 'ellipsis', title: file_name_without_extention, data: {toggle: 'tooltip'}} %></h4>
-  			  <p><%= raw knowledge.tag_list.map { |t| link_to t, controller: "tags", action: "search", "tag[name]"=> t }.join ', ' %></p>
-  		  </div>
-  	  </div>
-    </div>
-    <% if column_count == 4 || column_count == @knowledges.count %>
+<div class="row">
+  <div class="col-md-12">
+    <%= will_paginate @knowledges, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>  
+<div class="row">
+  <div class="col-md-12">
+    <% @knowledges.each do |knowledge| %>
+      <% if column_count == 1 %>
+        <div class="row">
+      <% end %>
+      <div class="col-xs-4 col-md-3">
+        <div class="thumbnail thumbnail-fixed transition-add">
+    		  <%= link_to content_tag(:div, nil, {class: ["file-icon", "file-icon-ml", "center-fixed-content"], data: {type: get_file_extention(knowledge.file.url)}}), knowledge.file.url, {:target => "_blank"} %>
+    		  <div class="caption">
+    		    <% file_name_without_extention = get_file_name_without_extention(knowledge.file.url) %>
+    			  <h4><%= link_to file_name_without_extention, knowledge_path(knowledge), {class: 'ellipsis', title: file_name_without_extention, data: {toggle: 'tooltip'}} %></h4>
+    			  <p><%= raw knowledge.tag_list.map { |t| link_to t, controller: "tags", action: "search", "tag[name]"=> t }.join ', ' %></p>
+    		  </div>
+    	  </div>
       </div>
-  	  <% column_count = 0%>
+      <% if column_count == 4 || column_count == @knowledges.count %>
+        </div>
+    	  <% column_count = 0%>
+      <% end %>
+      <% column_count += 1%>
     <% end %>
-    <% column_count += 1%>
-  <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12"> 
+    <%= will_paginate @knowledges, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>
+
 <% end %>

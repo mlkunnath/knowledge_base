@@ -4,7 +4,7 @@ class KnowledgesController < ApplicationController
   # GET /knowledges
   # GET /knowledges.json
   def index
-    @knowledges = Knowledge.where(user_id: current_user.id)
+    @knowledges = Knowledge.where(user_id: current_user.id).page(params[:page])
   end
 
   # GET /knowledges/1

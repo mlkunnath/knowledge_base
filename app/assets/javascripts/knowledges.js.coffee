@@ -5,6 +5,8 @@
 $(document).ready -> 
   $('[data-toggle="tooltip"]').tooltip()
   
+  $("#knowledge_description").charcounter {maxChars: 250, container: "#description_chart_counter", appendTo: 'insertAfter', htmlTxtStart: '', htmlTxtEnd: ' caracteres restantes'}
+  
   $('#accept_new_knowledge, #accept_edit_knowledge').click (e) ->
     currentForm = $(this).parents('form:first');
     
@@ -25,4 +27,4 @@ $(document).on  'change', '.btn-file :file', ->
 	input = $(this)
 	label = input.val().replace(/\\/g, '/').replace(/.*\//, '')
 	input.trigger 'fileselect', [label]
-  
+

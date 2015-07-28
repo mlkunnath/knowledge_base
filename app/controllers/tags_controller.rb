@@ -3,10 +3,15 @@ class TagsController < ApplicationController
   
   def search
     tag_name = search_params[:name]
-    tag_id = search_params[:id]
-    if tag_name
+    knowledge_type_id = search_params[:knowledge_type_id]
+    
+    @tag = Tag.new name: tag_name
+    if knowledge_type_id.blank?
       @knowledges = Knowledge.tagged_with(tag_name, :any => true).order(created_at: :desc).page(params[:page])
-      @tag = Tag.new name: tag_name
+    else
+      @knowledges = Knowledge.tagged_with(tag_name, :any => true).where(knowledge_type_id: knowledge_type_id).order(created_at: :desc).page(params[:page])
+    end
+
 =begin
       @search_result = PgSearch.multisearch(tag_name)
 
@@ -22,11 +27,7 @@ class TagsController < ApplicationController
       end
       
       @knowledges = @knowledges.uniq{|know| know.id}
-=end      
-    else 
-      @tag = Tag.find(tag_id)
-      @knowledges = Knowledge.tagged_with(@tag.name)
-    end
+=end
     
     render :show
   end
@@ -41,6 +42,6 @@ class TagsController < ApplicationController
     end
     
     def search_params
-      params.require(:tag).permit(:name, :id)
+      params.require(:tag).permit(:name, :id, :knowledge_type_id)
     end
 end

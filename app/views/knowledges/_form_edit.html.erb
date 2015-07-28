@@ -2,12 +2,13 @@
 
 <%= form_for @knowledge, :html => {class: "form-horizontal" } do |f| %>
   <% if @knowledge.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@knowledge.errors.count, "error") %> prohibited this knowledge from being saved:</h2>
-
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <ul>
-      <% @knowledge.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @knowledge.errors.each do |attribute, message| %>
+        <% unless message.blank? %>
+          <li><%= message %></li>
+        <% end %>
       <% end %>
       </ul>
     </div>
@@ -15,7 +16,8 @@
 
   <div class="field form-group">
     <%= f.label :description, t('descripcion', scope: i18n_scope) %><br>
-    <%= f.text_area :description, class: 'form-control' %>
+    <%= f.text_area :description, {class: 'form-control', maxlength: 250, rows: 3} %>
+    <h6 class="help-block pull-right" id="description_chart_counter">250 caracteres restantes</h6>
   </div>
   <div class="field form-group">
     <%= f.label t('tipo_conocimiento', scope: i18n_scope) %><br>

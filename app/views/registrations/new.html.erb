@@ -1,8 +1,10 @@
-<h2><%= t('.titulo_registro') %></h2>
+
 <div class="row">
   <div class="col-md-12">
+    <h2><%= t('.titulo_registro') %></h2>
+    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%= devise_error_messages_user! %>
     
       <div class="field form-group">
         <%= f.label :name, t('.nombres') %><br>

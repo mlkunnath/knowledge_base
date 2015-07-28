@@ -29,6 +29,17 @@ es:
     previous_label: "&#8592; Anterior"
     next_label: "Siguiente &#8594;"
     page_gap: "&hellip;"
+    page_entries_info:
+      multi_page: "Mostrando %{model} %{from} - %{to} de %{count} en total"
+      multi_page_html: "Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> en total"
+      single_page:
+        one: "Mostrando 1 %{model}"
+        other: "Mostrando en total %{count} %{model}"
+        zero: "No se encontraron %{model}"
+      single_page_html:
+        one: "Mostrando <b>1</b> %{model}"
+        other: "Mostrando en <b>total&nbsp;%{count}</b> %{model}"
+        zero: "No se encontraron %{model}"
     
   users:
     sessions:
@@ -40,7 +51,19 @@ es:
         boton_login: "Entrar"
         registrarse: "Regístrarme"
         olvide_contrasena: "Olvidé mi password"
-        
+    passwords:
+      new:
+        titulo_olvide_password: "¿Olvidaste tu contraseña?"
+        podemos_ayudar_a_recuperar: "Por suerte te podemos ayudar a recuperarla."
+        email: "Ingresa el e-mail con el que te registraste"
+        envianme_instrucciones: "Envíame las instrucciones!"
+      edit:
+        titulo_cambiar_password: "Cambia tu contraseña"
+        nuevo_password: "Tu nuevo password"
+        caracteres_minimos: "caracteres como mínimo"
+        confirmar_password: "Repite tu nuevo password"
+        boton_aceptar_nuevo_password: "Cambia mi password"
+  
   registrations:
     new:
       titulo_registro: "Regístrate"
@@ -67,3 +90,35 @@ es:
       boton_cancelar_cuenta:  "Cancela mi cuenta"
       confirmar_cancelacion: "¿Estás seguro?"
       boton_atras: "Atras"
+  
+  activerecord:
+    errors:
+      models:
+        knowledge:
+          attributes:
+            file_file_size:
+              less_than: "" #va en blanco para que no se imprima y no repita el mismo mensaje de abajo
+            file:
+              less_than: "Este conocimiento es muy grande, no debe superar los %{max}."
+              blank: "No olvides seleccionar lo que vas a subir."
+              spoofed_media_type: "Parece que este archico es poco comun y no lo podemos subir. Si crees que es un error escríbenos." 
+            description:
+              blank: "No olvides escribir una pequeña descripción."
+            knowledge_type_id:
+              blank: "¿Es una tarea, un trabajo de curso, un examen? No olvides indicarlo."
+            tag_list:
+              blank: "Los tags son la forma de encontrar tu conocimiento, agregar algunos."
+        user:
+          attributes:
+            name:
+              blank: "Has olvidado darnos tu nombre."
+            lastname:
+              blank: "Has olvidado darnos tus apellidos."
+            email:
+              blank: "Has olvidado darnos tu email, será tu usuario y nuestro medio de comunicación."
+            password:
+              blank: "Has dejado tu password en blanco."
+            password_confirmation:
+              confirmation: "No olvides confirmar tu password."
+            current_password:
+              blank: "Por seguridad debes ingresar tu password actual."

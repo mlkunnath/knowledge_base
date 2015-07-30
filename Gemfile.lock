@@ -98,6 +98,8 @@ GEM
       activerecord (>= 3.1)
       activesupport (>= 3.1)
       arel
+    puma (2.11.3)
+      rack (>= 1.1, < 2.0)
     rack (1.5.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -179,6 +181,7 @@ DEPENDENCIES
   paperclip (~> 4.2)
   pg
   pg_search
+  puma
   rails (= 4.1.8)
   rails_12factor
   sass-rails (~> 4.0.3)

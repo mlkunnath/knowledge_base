@@ -26,8 +26,8 @@ gem 'aws-sdk', '< 2.0'
 gem 'jquery-turbolinks'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
-#GEMA PUMA WEB SERVER PARA EROKU
-#gem 'puma'
+#GEMA PUMA WEB SERVER PARA HEROKU
+gem 'puma'
 #GEMA Para ver los assets en produccion, para HEROKU
 gem 'rails_12factor', group: :production
 #fin gemas agregas por giank

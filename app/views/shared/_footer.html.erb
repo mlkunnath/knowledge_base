@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <p class="navbar-text">Copyright © 2015</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <ul class="nav navbar-nav">
                     <li><a href="#"><i class="fa fa-twitter"></i></a>
                     </li>
@@ -14,11 +14,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <ul class="nav navbar-nav">
                     <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Terminos de Uso</a></li>
-                    <li><a href="#">Sugerencias</a></li>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><%= link_to "Sugerencias?", new_suggestion_path %></li>
+                    <li><%= link_to "Contacto", new_contact_path %></li>
                 </ul>
             </div>
         </div>

@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>Algo que decirnos?</h1>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for @contact do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Nombre completo"  %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, "Email" %>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :subject, "Asunto" %>
+        <%= f.text_field :subject, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :message, "Mensaje" %><br>
+        <%= f.text_area :message, {class: 'form-control', maxlength: 1500, rows: 5} %>
+        <h6 class="help-block pull-right" id="contact_chart_counter">1500 caracteres restantes como máximo</h6>
+      </div>
+      <div class="form-group">
+        <%= f.button "Enviar", {class: 'btn btn-primary'} %>
+        <%= link_to "Regresar", :back, class: 'btn btn-warning' %>
+      </div>
+    <% end %>
+  </div>
+</div>

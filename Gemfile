@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -14,23 +11,21 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-#gemas agregadas por giank
-gem 'paperclip', "~> 4.2"
-gem 'devise'
-gem 'acts-as-taggable-on', '~> 3.5'
-gem 'bootstrap-sass', '~> 3.3.5'
-gem 'autoprefixer-rails'
-gem 'pg'
-gem 'pg_search'
-gem 'aws-sdk', '< 2.0'
-gem 'jquery-turbolinks'
-gem 'will_paginate', '~> 3.0.6'
-gem 'will_paginate-bootstrap'
-#GEMA PUMA WEB SERVER PARA HEROKU
-gem 'puma'
-#GEMA Para ver los assets en produccion, para HEROKU
-gem 'rails_12factor', group: :production
-#fin gemas agregas por giank
+#gems added in development 
+gem 'paperclip', "~> 4.2" #file upload 
+gem 'devise' # users admin(create login, valida, confirm, reset password, etc)
+gem 'acts-as-taggable-on', '~> 3.5' #manage tags
+gem 'bootstrap-sass', '~> 3.3.5' #bootstrap with sass
+gem 'autoprefixer-rails' #something for bootstrap too
+gem 'pg' #postgresql
+gem 'pg_search' #fulltext search in postgresql
+gem 'aws-sdk', '< 2.0' #amazon aws sdk for file upload
+gem 'jquery-turbolinks' #compatibility for jquery and turbolinks
+gem 'will_paginate', '~> 3.0.6' #pagination gem
+gem 'will_paginate-bootstrap' #bootstrap styles for pagination gem
+gem 'mail_form' #send mails by form
+#gem 'puma' #webserver for heroku deploy
+gem 'rails_12factor', group: :production #some production heroku gem
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -10,7 +10,7 @@ es:
       already_authenticated: "Ya has iniciado sesión."
       inactive: "Tu cuenta aún no ha sido activada."
       invalid: "%{authentication_keys} o contraseña inválidos."
-      locked: "Tu cuenta ha sido bloqueada."
+      locked: "Tu cuenta ha sido bloqueada por seguridad. Te enviaremos un mail para desbloquearla y luego podrás cambiar tu contraseña."
       last_attempt: "Tienes un último intento antes de que tu cuenta sea bloqueada."
       not_found_in_database: "%{authentication_keys} o contraseña inválidos."
       timeout: "Tu sesión ha expirado, por favor inicia sesión nuevamente para continuar."
@@ -47,7 +47,7 @@ es:
     unlocks:
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear tu cuenta."
       send_paranoid_instructions: "Si tu cuenta existe, recibirás un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear tu cuenta."
-      unlocked: "Tu cuenta ha sido desbloqueada. Por favor inicia sesión para continuar."
+      unlocked: "Tu cuenta ha sido desbloqueada. Por favor inicia sesión para continuar o dale click al boton 'Olvidé mi password' para cambiar tu contraseña."
   errors:
     messages:
       already_confirmed: "ya has sido confirmado, por favor intenta iniciar sesión."

@@ -3,7 +3,11 @@
 <div class="page-header">
   <h1><%= t('editando', scope: i18n_scope) %></h1>
 </div>
-<%= render 'form_edit' %>
-
-<%= link_to t('ver', scope: i18n_scope), @knowledge, class: 'btn btn-primary' %> |
-<%= link_to t('boton_regresar', scope: i18n_scope), :back, class: 'btn btn-warning' %>
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'form_edit' %>
+    
+    <%= link_to t('ver', scope: i18n_scope), @knowledge, class: 'btn btn-primary' %> 
+    <%= link_to t('boton_regresar', scope: i18n_scope), :back, class: 'btn btn-warning' %>
+  </div>
+</div>

@@ -13,9 +13,30 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'https://knowledge-base-elgiank.c9.io'}
+  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
+  #  address:              'smtp.zoho.com',
+  #  port:                 465,
+  #  user_name:            'hola@noesplaje.com',
+  #  password:             '2264204a',
+  #  authentication:       'login',
+  #  ssl:                  true,
+  #  tls:                  true,
+  #  enable_starttls_auto: true  }
+  #  config.action_mailer.default_options = {
+  #   from: 'hola@noesplaje.com'}
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    user_name:            'giancarlovr@gmail.com',
+    password:             '97612376capo',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+    config.action_mailer.default_options = {
+     from: 'hola@noesplaje.com'}
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

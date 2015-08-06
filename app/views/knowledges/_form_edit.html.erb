@@ -1,6 +1,6 @@
 <% i18n_scope = "conocimiento" %>
 
-<%= form_for @knowledge, :html => {class: "form-horizontal" } do |f| %>
+<%= form_for @knowledge do |f| %>
   <% if @knowledge.errors.any? %>
     <div class="alert alert-warning alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -14,20 +14,20 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
+  <div class="form-group">
     <%= f.label :description, t('descripcion', scope: i18n_scope) %><br>
     <%= f.text_area :description, {class: 'form-control', maxlength: 250, rows: 3} %>
     <h6 class="help-block pull-right" id="description_chart_counter">250 caracteres restantes</h6>
   </div>
-  <div class="field form-group">
+  <div class="form-group">
     <%= f.label t('tipo_conocimiento', scope: i18n_scope) %><br>
     <%= f.collection_select :knowledge_type_id, KnowledgeType.all, :id, :name, {include_blank: t('seleccione_tipo_conocimiento', scope: i18n_scope)}, {class: 'form-control'} %>
   </div>
-  <div class="field form-group">
+  <div class="form-group">
     <%= f.label :tag_list, t('lista_tags', scope: i18n_scope) %>
     <%= f.text_field :tag_list, class: 'form-control' %>
   </div>
-  <div class="actions form-group">
+  <div class="form-group">
     <%= f.button t('guardar', scope: i18n_scope), {class: 'btn btn-primary', id: 'accept_edit_knowledge'} %>
   </div>
 <% end %>

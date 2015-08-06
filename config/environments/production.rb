@@ -14,6 +14,22 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.zoho.com',
+    port:                 465,
+    user_name:            'hola@noesplaje.com',
+    password:             '2264204a',
+    authentication:       'plain',
+    ssl:                  true,
+    tls:                  true,
+    enable_starttls_auto: true  }
+    config.action_mailer.default_options = {
+     from: 'hola@noesplaje.com'}
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.

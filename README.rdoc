@@ -1,7 +1,7 @@
-== README
+== Knowledge Base Api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This branch will be used to add supportfor  Restfull API calls using active_model_serializers gem
+
 
 Things you may want to cover:
 

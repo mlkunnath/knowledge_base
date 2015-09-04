@@ -1,16 +1,22 @@
-<h2>Resend unlock instructions</h2>
-
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="row">
+  <div class="col-md-6">
+    <h2>¿Se bloqueó tu cuenta?
+      <br/> 
+      <small>Te podemos ayudar a recuperarla</small>
+    </h2>
+    
+    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+    
+      <div class="form-group">
+        <%= f.label :email, "Ingresa el e-mail con el que te registraste" %><br />
+        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      </div>
+    
+      <div class="form-group">
+        <%= f.submit "Envíame las instrucciones!", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
-  </div>
-<% end %>
-
+</div>
 <%= render "users/shared/links" %>

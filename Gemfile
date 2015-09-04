@@ -24,6 +24,7 @@ gem 'jquery-turbolinks' #compatibility for jquery and turbolinks
 gem 'will_paginate', '~> 3.0.6' #pagination gem
 gem 'will_paginate-bootstrap' #bootstrap styles for pagination gem
 gem 'mail_form' #send mails by form
+gem 'font-awesome-sass' #font awson gem
 #gem 'puma' #webserver for heroku deploy
 gem 'rails_12factor', group: :production #some production heroku gem
 

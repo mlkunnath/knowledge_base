@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :knowledges
   resources :contacts, only: [:new, :create]
   resources :suggestions, only: [:new, :create]
+  resources :policies, only: [:new]
+  resources :terms, only: [:new]
   
 end

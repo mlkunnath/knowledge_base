@@ -1,27 +1,27 @@
-<nav class="navbar navbar-default navbar-fixed-bottom">
+<footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <p class="navbar-text">Copyright © 2015</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <ul class="nav navbar-nav">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    <li>
+                        <a href="https://twitter.com/noesplaje"><i class="fa fa-twitter"></i></a>
                     </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    <li>
+                        <a href="https://www.facebook.com/noesplaje"><i class="fa fa-facebook"></i></a>
                     </li>
                 </ul>
             </div>
             <div class="col-md-6">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Términos de Uso</a></li>
+                    <li><%= link_to "Política de Privacidad", new_policy_path %></li>
+                    <li><%= link_to "Términos de Uso", new_term_path %></li>
                     <li><%= link_to "Sugerencias?", new_suggestion_path %></li>
                     <li><%= link_to "Contacto", new_contact_path %></li>
                 </ul>
             </div>
         </div>
     </div>
-</nav>
+</footer>

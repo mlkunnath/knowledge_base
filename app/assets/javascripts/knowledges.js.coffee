@@ -12,6 +12,7 @@ $(document).ready ->
     
     $(this).prop("disabled", true)
     $(this).addClass("m-progress")
+    $(".loading-container").show();
     
     currentForm.submit()
     return
